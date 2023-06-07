@@ -260,7 +260,8 @@ char* completion_sub_cmd_generator(const char* text, int state) {
 
     // Extract command and sub-command
     char buff[128];
-    strncpy(buff, name, sizeof(buff));
+    //strncpy(buff, name, sizeof(buff));
+    snprintf(buff, sizeof(buff), "%s", name);
     char* cmd = strtok(buff, " ");
     char* sub = strtok(NULL, " ");
 
